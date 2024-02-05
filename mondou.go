@@ -19,6 +19,9 @@ var ENV struct {
 // Evaluate code
 func Eval(code string) (res interface{}, err error) {
 	code = strings.TrimSpace(code)
+	if code == "" {
+		return
+	}
 	// parsing quotes
 	quotes := []int{-1, -1}
 	for i, char := range code {
